@@ -1,0 +1,13 @@
+int CountZeores(int n){
+if(n<=9){
+if(n==0)
+return 1;
+else 
+return 0;
+}
+int lastdigit=n%10;
+int cnt=0;
+if(lastdigit==0)
+cnt=1;
+return cnt+CountZeores(n/10);
+}
