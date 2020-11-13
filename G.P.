@@ -1,0 +1,6 @@
+double rec(long long int n){
+ if(n==0)
+ return 1;
+ double smallinput= double(1/pow(2,n)) +rec(n-1);
+ return smallinput;
+}
