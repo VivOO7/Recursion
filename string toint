@@ -10,3 +10,28 @@ int stringToNumber(char input[]) {
     return b;
 
 }
+
+
+//another approach
+int length(char input[]){
+  int l=0;
+  for(int i=0;input[i]='\0';i++)
+  l++;
+  return l;
+}
+
+int helper(char input[],int last){
+  if(last==0){
+    return input[last]-'0';
+  }
+  int smallans=helper(input,last-1);
+  int a=input[last]-'0';
+  return smallans*10+a;
+}
+
+int stringToNumber(char input[]){
+  int len=length(input);
+  int ans=stringToNumber(input,len-1);
+  return ans;
+  
+}
