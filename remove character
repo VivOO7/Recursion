@@ -1,0 +1,16 @@
+#include<string.h>
+void removeX(char input[]) {
+    // Write your code here
+    if(strlen(input)==0)
+		return;
+	if(input[0]=='x')
+	{
+		for(int i=1;i<=strlen(input);i++)
+		{
+			input[i-1]=input[i];
+		}
+		removeX(input);
+	}
+	else
+		removeX(input+1);
+}
