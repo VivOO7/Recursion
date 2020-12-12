@@ -1,0 +1,23 @@
+void printSubsetsOfArray(int input[], int size,int output[],int m) {
+    int newout[m+1];
+    if(size==0){
+        for(int i=0;i<m;i++)
+            cout<<output[i]<<" ";
+        cout<<endl;
+        return;
+    }
+    int k=0;
+    printSubsetsOfArray(input+1,size-1,output,m);
+    for(int i=0;i<m;i++){
+        newout[k]=output[i];
+        k++;
+    }
+    newout[k]=input[0];
+    printSubsetsOfArray(input+1,size-1,newout,m+1);
+	// Write your code here
+    
+}
+void printSubsetsOfArray(int input[], int size){
+    int output[1000];
+    printSubsetsOfArray(input,size,output,0);
+}
